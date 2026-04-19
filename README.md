@@ -15,7 +15,7 @@ A Bank Account Simulator CLI in java demonstrating OOP fundamentals
 
 ### Classes built today
 
--`BankAccount` - private fields, constructor, deposit/withdraw with validation.
+- `BankAccount` - private fields, constructor, deposit/withdraw with validation.
 
 
 ## Day 2 - Java OOP: this, static, final keywords & constructors and their overloading
@@ -34,7 +34,29 @@ A Bank Account Simulator CLI in java demonstrating OOP fundamentals
 
 ### Classes built today
 
--`BankAccount` - final fields, constructor 2, static fields, getters for static fields.
+- `BankAccount` - final fields, constructor 2, static fields, getters for static fields.
+- `Day01Test`: tests day-1's changes made.
+- `Day02Test`: tests day-2's changes made.
 
 ### Packages built today
--`tests` - contains every day changes as test classes. 
+- `tests` - contains every day changes as test classes. 
+
+
+## Day 3 - Java OOP: Inheritance and super()
+
+### What I built
+A Bank Account Simulator CLI in java demonstrating OOP fundamentals
+
+### What I Learned
+
+- Inheritance: put the shared code in one place(the parent), and only write what's different in the child class.
+- IS-A: Inheritance & HAS-A: composition
+- super: "super" is to the parent class what "this" is to current class
+- Method overriding: `@Override` - is an annotation, to override parent class methods
+- when you want both child's behavior and parent's behavior - use `super.methodName(args)` inside the overridden method.
+
+### Classes built today
+
+- `SavingsAccount`: extends `BankAccount`
+- `CheckingAccount`: extends `BankAccount`, but overrides the `withdraw()` method
+- `Day03Test`: tests day-3's changes made.
