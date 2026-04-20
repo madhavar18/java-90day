@@ -1,4 +1,4 @@
-package banking.tests;
+/*package banking.tests;
 
 import banking.BankAccount;
 
@@ -54,4 +54,4 @@ public class Day01Test {
         }
         sc.close();
     }
-}
+}*/

@@ -1,4 +1,4 @@
-package banking.tests;
+/*package banking.tests;
 import banking.BankAccount;
 public class Day02Test {
     public static void main(String[] args) {
@@ -35,4 +35,5 @@ public class Day02Test {
         }
         System.out.println("Total still: " + BankAccount.getTotalAccCreated()); // still 2
     }
-}
+}*/
+

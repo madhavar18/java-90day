@@ -1,7 +1,7 @@
 package banking;
 
 
-public class SavingsAccount extends BankAccount{
+public class SavingsAccount extends BankAccount implements Printable, Auditable{
     private static final int MAX_WITHDRAWALS_PER_MONTH = 3;
     private static final double INTEREST_RATE = 0.04;
 
@@ -17,6 +17,9 @@ public class SavingsAccount extends BankAccount{
     public SavingsAccount(String accountId, String ownerName) {
         this(accountId, ownerName, MIN_BAL); //MIN_BAL inherited from BankAccount
     }
+
+    @Override
+    public String getAccountType() { return "SAVINGS"; }
 
     //Override withdraw() - SavingsAccount has its own rules
     @Override
@@ -34,6 +37,12 @@ public class SavingsAccount extends BankAccount{
         }
     }
 
+    @Override
+    public void deposit(double amount) {
+        super.deposit(amount);
+        logDeposit(amount);
+    }
+
     //new method  - only SavingsAccount has this
     public void applyMonthlyInterest() {
         double interest = getBalance() * (INTEREST_RATE / 12);
@@ -45,6 +54,22 @@ public class SavingsAccount extends BankAccount{
     public void resetMonthlyWithdrawals() {
         withdrawalsThisMonth = 0;
         System.out.println("Monthly withdrawal count reset.");
+    }
+
+    public int getWithdrawalsThisMonth() { return withdrawalsThisMonth; }
+
+    @Override
+    public void printStatement() {
+        System.out.println("=== Savings Account Statement ===");
+        System.out.println(toString());
+        System.out.printf("Withdrawals used: %d/%d | Interest rate: %.1f%%%n",
+                withdrawalsThisMonth, MAX_WITHDRAWALS_PER_MONTH, INTEREST_RATE);
+    }
+
+    @Override
+    public void logTransaction(String action, double amount) {
+        System.out.printf("[AUDIT] %s | %s | %.2f %s%n",
+                getAccountId(), action, amount, CURRENCY);
     }
 
     @Override

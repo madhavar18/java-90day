@@ -1,6 +1,6 @@
 package banking;
 
-public class BankAccount {
+public abstract class BankAccount {
     //STATIC (class-leve, shared across all accounts)
     private static String bankName = "ABC";
     private static int totalAccCreated = 0;
@@ -28,6 +28,15 @@ public class BankAccount {
     //CONSTRUCTOR 2: no deposit, starts at MIN_BAL
     public BankAccount(String accountId, String ownerName) {
         this(accountId, ownerName, MIN_BAL);
+    }
+
+    // Abstract method - subclasses MUST implement, parent cannot
+    public abstract String getAccountType();
+
+    // Concrete shared method - subclasses get this for free
+    public void printAccountInfo() {
+        System.out.printf("[%s] %s | Balance: %.2f %s | Type: %s%n",
+                accountId, ownerName, balance, CURRENCY, getAccountType());
     }
 
     //STATIC methods (can ONLY access static fields

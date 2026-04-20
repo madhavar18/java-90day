@@ -1,6 +1,6 @@
 package banking;
 
-public class CheckingAccount extends BankAccount{
+public class CheckingAccount extends BankAccount implements Auditable{
     private static final double TRANSACTION_FEE = 20.0;
     private int totalTransactions;
     private double totalFeesCharged;
@@ -14,6 +14,9 @@ public class CheckingAccount extends BankAccount{
     public CheckingAccount(String accountId, String ownerName) {
         this(accountId, ownerName, MIN_BAL);
     }
+
+    @Override
+    public String getAccountType() { return "CHECKING"; }
 
     @Override
     public void withdraw(double amount) {
@@ -35,6 +38,12 @@ public class CheckingAccount extends BankAccount{
         System.out.println(toString());
         System.out.printf("Total transactions: %d | Total fees paid: %.2f %s%n",
                 totalTransactions, totalFeesCharged, CURRENCY);
+    }
+
+    @Override
+    public void logTransaction(String action, double amount) {
+        System.out.printf("[AUDIT] %s | %s | %.2f %s%n",
+                getAccountId(), action, amount, CURRENCY);
     }
 
     @Override

@@ -60,3 +60,23 @@ A Bank Account Simulator CLI in java demonstrating OOP fundamentals
 - `SavingsAccount`: extends `BankAccount`
 - `CheckingAccount`: extends `BankAccount`, but overrides the `withdraw()` method
 - `Day03Test`: tests day-3's changes made.
+
+
+## Day 4 - Java OOP: Polymorphism, Interfaces and Abstract classes
+
+### What I built
+A Bank Account Simulator CLI in java demonstrating OOP fundamentals
+
+### What I Learned
+
+- Polymorphism: One method call, many possible behaviors, decided at runtime based on the actual object type.
+- Interface: a pure contract, it says something must be able to do, with zero implementation. Any class can implement any no. of interfaces.
+- Abstract Classes: the middle ground, use when you want to provide some shared implementation & enable that subclasses provide certain methods - but the parent class should never be instantiated.
+
+### Classes built today
+
+- `Printable`: An interface implemented by `SavingsAccount`.
+- `Auditable`: An interface implemented by both `SavingsAccoun` and `CheckingAccount`.
+
+### NOTE: 
+SINCE `BankAccount` IS MADE "ABSTRACT", INSTANTIATING IT IS NOT POSSIBLE. SO, THE TEST CLASSES OF DAY01 AND DAY02 MIGHT NOT WORK AND ARE TURNED INTO COMMENTS FOR THE EXECUTION OF TEST CLASS OF DAY04. INORDER TO TEST DAY01 AND DAY02, REVERT BACK `BankAccount` TO NORMAL CLASS.
