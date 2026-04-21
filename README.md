@@ -76,7 +76,23 @@ A Bank Account Simulator CLI in java demonstrating OOP fundamentals
 ### Classes built today
 
 - `Printable`: An interface implemented by `SavingsAccount`.
-- `Auditable`: An interface implemented by both `SavingsAccoun` and `CheckingAccount`.
+- `Auditable`: An interface implemented by both `SavingsAccount` and `CheckingAccount`.
 
 ### NOTE: 
 SINCE `BankAccount` IS MADE "ABSTRACT", INSTANTIATING IT IS NOT POSSIBLE. SO, THE TEST CLASSES OF DAY01 AND DAY02 MIGHT NOT WORK AND ARE TURNED INTO COMMENTS FOR THE EXECUTION OF TEST CLASS OF DAY04. INORDER TO TEST DAY01 AND DAY02, REVERT BACK `BankAccount` TO NORMAL CLASS.
+
+
+## Day 5 - Java Collections
+
+### What I built
+A Bank Account Simulator CLI in java demonstrating OOP fundamentals
+
+### What I Learned
+
+- Why Collections? : they solve the problems caused by arrays, like limited space and data type compatibility issues etc.,
+- Type of Collections: Lists - for contiguous memory allocations, Map - to store key-value pairs and for O(1) fetch time, Set - Hashed storage and uniqueness check.
+
+### Classes built today
+
+- `BankRepository`: Collection data types required for this bank simulator and helper functions for using them.
+- `Day05Test`: to test day-5's changes.
