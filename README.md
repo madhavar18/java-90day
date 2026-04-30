@@ -96,3 +96,30 @@ A Bank Account Simulator CLI in java demonstrating OOP fundamentals
 
 - `BankRepository`: Collection data types required for this bank simulator and helper functions for using them.
 - `Day05Test`: to test day-5's changes.
+
+
+## Day 9 - Big O & Two Sum 
+
+### What I Learned
+
+- Why Big O? : Big O is about answering: "as the input grows, how does the runtime grow?".
+- Array Operations and their complexity.
+- Two Sum: the difference between the brute force approach - O(n2) and optimal approach with HashMap - O(n).
+
+### Classes built today
+
+- `Two Sum.java`: implementation of both brute force and optimal approaches along with complexity comparison of the approaches.
+
+
+## Day 10 - Strings & Sliding Window Pattern
+
+### What I Learned
+
+- Why are Strings immutable in Java? : 3 reasons - security, performance, thread safety.
+- String Operations and their complexity.
+- Sliding Window Pattern: Maintain two pointer - left & right - that define the current window.  the window represents our current candidate substring.  Expand right to add new characters, when the window becomes invalid, shrink left until its valid again.
+
+
+### Classes built today
+
+- `StringProblems.java`: implementation of Sliding window pattern and complexity benchmark comparison between new string object formation and StringBuilder class. 
