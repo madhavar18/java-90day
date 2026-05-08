@@ -133,11 +133,32 @@ A Bank Account Simulator CLI in java demonstrating OOP fundamentals
 - LinkedList breaks this constraint entirely - elements can be scattered everywhere in memory. They find each other through pointers.
 - How is insertion at front O(1)?: LinkedLists maintain a head pointer which points to the first node.  If we can manipulate that pointer, it is an O(1) operation.
 - LinkedList vs ArrayList - when to use which?:
-- Random access by index, Add/remove at END ⇒ use ARRAYLIST.
-- Add/remove at FRONT, Queue/Deque implementation ⇒ use LINKEDLIST.
+  - Random access by index, Add/remove at END ⇒ use ARRAYLIST.
+  - Add/remove at FRONT, Queue/Deque implementation ⇒ use LINKEDLIST.
 
 
 ### Classes built today
 
 - `LinkedList.java`: Implementation LinkedLists in java,  a static class for node representation, along with all the operations that can be performed on LinkedList.
-- `Day15Test.java`: A test class built to test the implementation of `LinkedList.java` class. 
+- `Day15Test.java`: A test class built to test the implementation of `LinkedList.java` class.
+
+
+## Day 15 - Stacks and Queues
+
+### What I Learned
+
+- Main insight: The problem they solve isn't about data storage. It's about modeling real-world processes.
+- LIFO: Last In, First Out. The most recently added item is the first one removed.  This is a Stack.
+- FIFO: First In, First Out. The earliest added item is the first one removed. This is a Queue.
+- The JVM Call Stack is a literal Stack data structure.
+- Why StackOverFlow occurs: Each call pushes a new frame onto the call stack. The stack has a fixed size (typically 512 KB - 1 MB). When it fills up - StackOverFlow occurs.
+- Real world Queues: 
+  - -> OS process scheduler.
+  - -> Print Spooler.
+  - ->Network packet processing.
+  - -> BFS (Breadth First Search).
+
+
+### Classes built today
+
+- `StackAndQueue.java`: A class implementing the data structures Stack and Queue along with their operations - push, pop, peek for Stack & enqueue, dequeue, peek for Queue. Also contains the solutions for LeetCode problems - Valid Parentheses(#20) & Daily Temperatures(#739).

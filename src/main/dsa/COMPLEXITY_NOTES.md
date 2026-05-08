@@ -54,6 +54,24 @@ Not "how fast?" but "how does runtime GROW as input grows?"
 | Unknown size, general use     | ArrayList    |
 | Queue/Deque implementation    | LinkedList   |
 
+## Stack operations (ArrayList-backed)
+| Operation | Time         | Notes                        |
+|-----------|--------------|------------------------------|
+| push()    | O(1) amort   | add to end of ArrayList      |
+| pop()     | O(1)         | remove from end              |
+| peek()    | O(1)         | read end without removing    |
+
+## Queue operations (LinkedList-backed with tail pointer)
+| Operation    | Time | Notes                           |
+|--------------|------|---------------------------------|
+| enqueue()    | O(1) | add to back via tail pointer    |
+| dequeue()    | O(1) | remove from front, move head    |
+| peekFront()  | O(1) | read front without removing     |
+
+## When to use Stack vs Queue
+Stack (LIFO): matching problems, undo history, DFS traversal, call stack modelling
+Queue (FIFO): BFS traversal, scheduling, print queues, notification systems
+
 ## Sliding Window pattern
 Template: left pointer + right pointer + state (HashMap or array)
 - Expand right: add element to state
@@ -71,3 +89,5 @@ WHY O(n): each element enters window once, leaves window once = 2n ops total
 | 10  | Contains Duplicate (#217)         | HashSet        | O(n) | O(n)  |
 | 15  | Reverse Linked List (#206)| 3-pointer reversal  | O(n) | O(1)  |
 | 15  | Middle of LinkedList(#876)| Fast/slow pointers  | O(n) | O(1)  |
+| 16  | Valid Parentheses (#20)      | Stack            | O(n) | O(n)  |
+| 16  | Daily Temperatures (#739)    | Monotonic Stack  | O(n) | O(n)  |
