@@ -32,6 +32,28 @@ Not "how fast?" but "how does runtime GROW as input grows?"
 | + concatenation        | O(n)       | creates new String object      |
 | StringBuilder.append() | O(1) amort | same as ArrayList.add()        |
 
+## LinkedList operations
+| Operation          | Time  | WHY                                      |
+|--------------------|-------|------------------------------------------|
+| addFirst()         | O(1)  | 2 pointer ops, no shifting               |
+| addLast()          | O(n)  | must walk to end                         |
+| addAt(i)           | O(n)  | walk to position + O(1) rewire           |
+| removeFirst()      | O(1)  | 1 pointer op                             |
+| removeLast()       | O(n)  | must walk to second-to-last              |
+| get(i)             | O(n)  | must walk from head                      |
+| contains(v)        | O(n)  | must scan every node                     |
+| reverse()          | O(n)  | one pass, 3 pointer ops per node         |
+| findMiddle()       | O(n)  | fast/slow pointer, one pass              |
+
+## ArrayList vs LinkedList — decision guide
+| Scenario                      | Use          |
+|-------------------------------|--------------|
+| Random access by index        | ArrayList    |
+| Add/remove at END             | ArrayList    |
+| Add/remove at FRONT           | LinkedList   |
+| Unknown size, general use     | ArrayList    |
+| Queue/Deque implementation    | LinkedList   |
+
 ## Sliding Window pattern
 Template: left pointer + right pointer + state (HashMap or array)
 - Expand right: add element to state
@@ -47,3 +69,5 @@ WHY O(n): each element enters window once, leaves window once = 2n ops total
 | 10  | Longest Substring No Repeat (#3)  | Sliding Window | O(n) | O(1)* |
 | 10  | Valid Anagram (#242)              | Freq Array     | O(n) | O(1)  |
 | 10  | Contains Duplicate (#217)         | HashSet        | O(n) | O(n)  |
+| 15  | Reverse Linked List (#206)| 3-pointer reversal  | O(n) | O(1)  |
+| 15  | Middle of LinkedList(#876)| Fast/slow pointers  | O(n) | O(1)  |

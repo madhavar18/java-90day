@@ -122,4 +122,22 @@ A Bank Account Simulator CLI in java demonstrating OOP fundamentals
 
 ### Classes built today
 
-- `StringProblems.java`: implementation of Sliding window pattern and complexity benchmark comparison between new string object formation and StringBuilder class. 
+- `StringProblems.java`: implementation of Sliding window pattern and complexity benchmark comparison between new string object formation and StringBuilder class.
+
+
+## Day 15 - LinkedLists
+
+### What I Learned
+
+- WHY LinkedLists?: ArrayLists need contiguous memory, making insertion at front an O(n) task.  When you insert at front in a ArrayList,  every element shifts in memory.  
+- LinkedList breaks this constraint entirely - elements can be scattered everywhere in memory. They find each other through pointers.
+- How is insertion at front O(1)?: LinkedLists maintain a head pointer which points to the first node.  If we can manipulate that pointer, it is an O(1) operation.
+- LinkedList vs ArrayList - when to use which?:
+- Random access by index, Add/remove at END ⇒ use ARRAYLIST.
+- Add/remove at FRONT, Queue/Deque implementation ⇒ use LINKEDLIST.
+
+
+### Classes built today
+
+- `LinkedList.java`: Implementation LinkedLists in java,  a static class for node representation, along with all the operations that can be performed on LinkedList.
+- `Day15Test.java`: A test class built to test the implementation of `LinkedList.java` class. 
