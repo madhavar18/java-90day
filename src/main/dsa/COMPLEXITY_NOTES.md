@@ -80,6 +80,21 @@ Template: left pointer + right pointer + state (HashMap or array)
 
 WHY O(n): each element enters window once, leaves window once = 2n ops total
 
+## Binary Search
+Precondition: array MUST be sorted
+Time: O(log n) — halves search space each step
+Space: O(1) iterative, O(log n) recursive (call stack)
+
+Invariant: target is always within [left, right] if it exists.
+When left > right: search space empty, not found.
+
+Integer overflow trap: use left + (right - left) / 2, NOT (left + right) / 2
+
+## Recursion + Memoization
+Naive recursion: often O(2ⁿ) — recomputes same subproblems
+Memoization: cache results → O(n) time, O(n) space
+Iterative (bottom-up): O(n) time, O(1) space — usually best
+
 ## Problems solved
 | Day | Problem         | Pattern      | Time | Space |
 |-----|-----------------|--------------|------|-------|
@@ -91,3 +106,5 @@ WHY O(n): each element enters window once, leaves window once = 2n ops total
 | 15  | Middle of LinkedList(#876)| Fast/slow pointers  | O(n) | O(1)  |
 | 16  | Valid Parentheses (#20)      | Stack            | O(n) | O(n)  |
 | 16  | Daily Temperatures (#739)    | Monotonic Stack  | O(n) | O(n)  |
+| 20  | Binary Search (#704)        | Binary Search    | O(log n) | O(1)     |
+| 20  | First Bad Version (#278)    | Binary Search    | O(log n) | O(1)     |

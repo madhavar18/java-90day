@@ -162,3 +162,26 @@ A Bank Account Simulator CLI in java demonstrating OOP fundamentals
 ### Classes built today
 
 - `StackAndQueue.java`: A class implementing the data structures Stack and Queue along with their operations - push, pop, peek for Stack & enqueue, dequeue, peek for Queue. Also contains the solutions for LeetCode problems - Valid Parentheses(#20) & Daily Temperatures(#739).
+
+
+## Day 20 - Binary Search and Recurison
+
+### What I Learned
+
+- Binary Search requires a sorted array.  That's a prerequisite, and it's not arbitrary.
+- Core Idea: If the array is sorted, you can eliminate half the remaining elements with one comparison.
+- Each step halves the search space.  Starting with n elements, after k steps you have n/(2^k) elements. You stop when that equal 1.
+- For n = 1 billion, 30 comparisons to find any element in a sorted array of 1 billion. 
+- A linear scan averages 500 million comparisons.  This is the practical power of O(log n).
+- At every step, the target(if it exists) is always within `[left, right]`. This property - called the invariant - is maintained throughout. When `left > right`, the invariant can't hold, so the target doesn't exist.
+- Recursion: Each recursive call pushes a new fraem onto the call stack.  The base case is what pops the stack.  Without a base case, the stack grows until StackOverflowError.
+- But the problem with naive recursion is that it computes the same value over and over. For example,  to calculate the fibonacci sequence upto 5 elements, fib(2) is calculated 3 times and fib(3) is calculated 2 times.
+- for fib(50), this tress has over 2 trillion nodes. It never finishes.
+- This is where memoization steps in.  It means remembering what you have already computed.
+- Each value computed exactly once. Total calls: 2n-1. O(n). From O(2^n) to O(n) by caching.
+- This is top-down dynamic programming - memoized recursion.
+
+
+### Classes built today
+
+- `BinarySearchAndRecursion.java`: A class implementing the iterative and recursive binary search technique, also implementing naive recursive, memoized recursive, iterative versions of Fibonacci sequence.  Also consists the solutions for LeetCode problems - FirstBad(#278) and Binary Search(#704).
