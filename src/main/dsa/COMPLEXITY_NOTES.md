@@ -95,6 +95,26 @@ Naive recursion: often O(2ⁿ) — recomputes same subproblems
 Memoization: cache results → O(n) time, O(n) space
 Iterative (bottom-up): O(n) time, O(1) space — usually best
 
+## Binary Search Tree
+BST property: left subtree < node < right subtree (maintained at EVERY node)
+
+| Operation | Balanced (avg) | Unbalanced (worst) |
+|-----------|---------------|--------------------|
+| insert()  | O(log n)      | O(n) sorted input  |
+| search()  | O(log n)      | O(n)               |
+| delete()  | O(log n)      | O(n)               |
+
+Unbalanced worst case: inserting sorted data creates a linked list shape.
+Fix: self-balancing trees (AVL, Red-Black) — Day 52 system design context.
+
+## Tree Traversals
+| Traversal | Order              | Uses                           | DS Used |
+|-----------|--------------------|--------------------------------|---------|
+| Inorder   | left, node, right  | Sorted output from BST         | Stack   |
+| Preorder  | node, left, right  | Tree serialisation, copy       | Stack   |
+| Postorder | left, right, node  | Delete tree, subtree sizes     | Stack   |
+| BFS/Level | level by level     | Shortest path, level problems  | Queue   |
+
 ## Problems solved
 | Day | Problem         | Pattern      | Time | Space |
 |-----|-----------------|--------------|------|-------|
@@ -108,3 +128,7 @@ Iterative (bottom-up): O(n) time, O(1) space — usually best
 | 16  | Daily Temperatures (#739)    | Monotonic Stack  | O(n) | O(n)  |
 | 20  | Binary Search (#704)        | Binary Search    | O(log n) | O(1)     |
 | 20  | First Bad Version (#278)    | Binary Search    | O(log n) | O(1)     |
+| 22  | Max Depth (#104)              | DFS postorder  | O(n)     | O(h)   |
+| 22  | Invert Binary Tree (#226)     | DFS preorder   | O(n)     | O(h)   |
+| 22  | Level Order Traversal (#102)  | BFS + Queue    | O(n)     | O(w)   |
+| 22  | Validate BST (#98)            | DFS + range    | O(n)     | O(h)   |
