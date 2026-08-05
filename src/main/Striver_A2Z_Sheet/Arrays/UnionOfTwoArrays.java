@@ -50,9 +50,11 @@ public class UnionOfTwoArrays {
         for(int i = 0; i < a.length; i++) {
             a[i] = r.nextInt(0, 12);
         }
+        Arrays.sort(a);
         for(int i = 0; i < b.length; i++) {
             b[i] = r.nextInt(0, 12);
         }
+        Arrays.sort(b);
 
         System.out.println("The two arrays are: ");
         System.out.println(Arrays.toString(a));
