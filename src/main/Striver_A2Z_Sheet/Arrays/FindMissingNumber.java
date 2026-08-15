@@ -18,7 +18,6 @@ public class FindMissingNumber {
 
     public static void main(String[] args) {
 
-    Random r = new Random();
     int[] a = new int[] {1,2,4,5};
     int N = 5;
     System.out.println("The array is: ");
